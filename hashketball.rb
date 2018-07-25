@@ -120,7 +120,7 @@ def game_hash
  } 
 end
 
-def num_points_scored(player)
+def num_points_scored(player_name)
 game_hash.each do |key1,value1|
     if value1[:players][player_name] != nil 
     score = value1[:players][player_name][:points]
