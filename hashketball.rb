@@ -120,22 +120,23 @@ def game_hash
  } 
 end
 
-def num_points_scored(player_name)
-  score = 0  
-  game_hash.each do |key1,value1|
-    value1.each do |key2,value2|
-      if key2 == :players
-        value2.each do |key3,valu3|
-          if key3 == player_name 
-          valu3.each do |key4,value4|
-            if key4 == :points
-              score = value4
-            end
-          end
-        end
-      end
-    end
-   end
+game_hash.each do |key1,value1|
+    if value1[:players][player_name] != nil 
+    score = value1[:players][player_name][:points]
+  end
+    # value1.each do |key2,value2|
+    #   if key2 == :players
+    #     value2.each do |key3,valu3|
+    #       if key3 == player_name 
+    #       valu3.each do |key4,value4|
+    #         if key4 == :points
+    #           score = value4
+    #         end
+    #       end
+    #     end
+    #   end
+    # end
+  # end
  end
  score 
 end
